@@ -41,7 +41,6 @@
           </div>
           <div class="col-12 col-lg-6">
             <!--Map section-->
-            <!--<img class="img-fluid" src="/images/map.png" alt="map provisoire">-->
             <div id="worldmap"></div>
           </div>
           <div class="col-12 col-lg-6">
@@ -58,13 +57,17 @@
               
               <% for(let i = 0; i < cityList.length; i++){%>
                 <li class="list-group-item d-flex justify-content-between align-items-center" 
-                data-lon="<%=cityList[i].longitude%>" data-lat="<%=cityList[i].latitude%>" data-name="<%=cityList[i].name%>">
+                data-lon="<%=cityList[i].longitude%>" data-lat="<%=cityList[i].latitude%>" data-name="<%=cityList[i].name%>"
+                data-img="<%=cityList[i].img%>" data-max="<%=cityList[i].temp_max%>°c" data-min="<%=cityList[i].temp_min%>°c"
+                >
                   <%=cityList[i].name%>
                   <div>
                     <%=cityList[i].desc%>
-                    <img src="<%=cityList[i].img%>">
-                    <span class="badge badge-warning badge-pill"><%=cityList[i].temp_max%>°c</span>
-                    <span class="badge badge-secondary badge-pill"><%=cityList[i].temp_min%>°c</span>
+                    <img src="<%=cityList[i].img%>" />
+                    <div>
+                      <span class="badge badge-warning badge-pill"><%=cityList[i].temp_max%>°c</span>
+                      <span class="badge badge-secondary badge-pill"><%=cityList[i].temp_min%>°c</span>
+                    </div>
                   </div>
                   <a href="/delete-city?id=<%=cityList[i].id%>"><i class="deletepicto far fa-times-circle"></i></a>
                 </li>

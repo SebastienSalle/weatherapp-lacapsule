@@ -35,8 +35,11 @@ for (let i = 0; i < cityItem.length; i++){
 
   // Pattern for new marker :
   // L.marker([48.858370, 2.294481]).addTo(mymap);
-  L.marker([cityItem[i].dataset.lat, cityItem[i].dataset.lon], {icon: customIcon}).addTo(mymap).bindPopup(cityItem[i].dataset.name);
+  console.log(cityItem[i])
+  L.marker(
+    [cityItem[i].dataset.lat,
+     cityItem[i].dataset.lon],
+    {icon: customIcon}
+  ).addTo(mymap).bindPopup(`<b>${cityItem[i].dataset.name}</b><img src="${cityItem[i].dataset.img}" /><br><span class="badge badge-warning badge-pill">${cityItem[i].dataset.max}</span>
+  <span class="badge badge-secondary badge-pill">${cityItem[i].dataset.min}</span>`);
 }
-
-
-
