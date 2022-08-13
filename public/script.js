@@ -30,7 +30,7 @@ for (let i = 0; i < cityItem.length; i++){
     iconAnchor:  [20, 53],
     shadowAnchor: [3, 15], 
    
-    popupAnchor: [-3, -76]
+    popupAnchor: [1, -19]
    });
 
   // Pattern for new marker :
