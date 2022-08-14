@@ -22,13 +22,13 @@ for (let i = 0; i < cityItem.length; i++){
 
   const customIcon = L.icon({
     iconUrl: './images/marker-temp.png',
-    shadowUrl: './images/marker-shadow.png',
+    // shadowUrl: './images/marker-shadow.png',
    
     iconSize:   [41, 53],
-    shadowSize:  [66, 16],
+    // shadowSize:  [66, 16],
    
     iconAnchor:  [20, 53],
-    shadowAnchor: [3, 15], 
+    // shadowAnchor: [3, 15], 
    
     popupAnchor: [1, -19]
    });

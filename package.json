@@ -16,6 +16,7 @@
     "http-errors": "~1.6.3",
     "mongoose": "^5.8.9",
     "morgan": "~1.9.1",
+    "serve-favicon": "^2.5.0",
     "sync-request": "^6.1.0",
     "then-request": "^6.0.2",
     "uid2": "^1.0.0"

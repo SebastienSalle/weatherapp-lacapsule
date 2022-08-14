@@ -35,7 +35,6 @@ a {
   justify-content: center;
 }
 
-
 .navItem{
   margin-bottom: 10px;
 }
@@ -49,8 +48,32 @@ a {
   color: #FFFFFF;
 }
 
+.list-group {
+  height: 450px;
+  overflow-y: scroll;
+}
+
 .deletepicto{
-  color: #a60059
+  color: #a60059;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.top-picto{
+  color: gray;
+  margin-bottom: 5px;
+  position: absolute; 
+  top:15%;
+  left: 10px;
+}
+
+.up-picto{
+  color: lightgray;
+  margin-top: 5px; 
+  position: absolute; 
+  bottom:25%;
+  left: 10px;
 }
 
 .update-cities {

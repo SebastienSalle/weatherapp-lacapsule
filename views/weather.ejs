@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
     
     crossorigin=""/>
-    
+    <link rel="icon" href="./images/favicon.ico"/>
+
 
     <title>WeatherApp</title>
 </head>
@@ -20,7 +21,7 @@
 
     <!-- HEADER -->
     <nav class=" header navbar navbar-light bg-dark">
-        Weather App
+      <img src="./images/favicon.ico"  height="20px" class="mr-1" /> Weather App
        <a class="logout" href="/users/logout">Deconnexion</a>
    </nav> 
 
@@ -28,29 +29,32 @@
    <!-- GRID -->
    <div class="container">
       <div class="row">
+        <p class="ml-2">Hello <%= username %></p>
+      </div>
+      <div class="row">
           <div class="col-12 offset-lg-6 col-lg-6">
             <!--New City section-->
             <form action="/add-city" method="POST">
               <div class="input-group mb-3">
-                <input name="newcity" type="text" class="form-control" placeholder="enter city name" aria-label="new city name">
+                <input name="newcity" type="text" class="form-control" placeholder="Enter city name" aria-label="new city name">
                 <div class="input-group-append">
                   <button class="btn btn-warning" type="submit" id="button-addon2">Add</button>
                 </div>
               </div>
             </form>
           </div>
-          <div class="col-12 col-lg-6">
+          <div class="col-11 col-lg-6">
             <!--Map section-->
             <div id="worldmap"></div>
           </div>
           <div class="col-12 col-lg-6">
             <!--City list section-->
             <% if(cityList.length == 0){%>
-              <span class="empty">No cities found</span>
+              <span class="empty">No city found</span>
             <%}%>
             
-            <div class="d-flex justify-content-center">
-              <a class="update-cities" href="/update-cities">Update Cities <i class="fas fa-sync-alt"></i></a>
+            <div class=" d-flex justify-content-center">
+              <a class="update-cities btn btn-outline-info" href="/update-cities">Update City Data <i class="fas fa-sync-alt"></i></a>
             </div>
 
             <ul class="list-group">
@@ -60,13 +64,22 @@
                 data-lon="<%=cityList[i].longitude%>" data-lat="<%=cityList[i].latitude%>" data-name="<%=cityList[i].name%>"
                 data-img="<%=cityList[i].img%>" data-max="<%=cityList[i].temp_max%>°c" data-min="<%=cityList[i].temp_min%>°c"
                 >
+                <div class="up-n-top">
+                  <% if( i > 1 ){%>
+                    <a href="/city-top?id=<%=cityList[i].id%>&place=<%=i%>"><i class="top-picto fa fa-angle-double-up"></i></a>
+                  <%}%>
+                  <br>
+                  <% if( i > 0 ){%>
+                    <a href="/city-up?id=<%=cityList[i].id%>&place=<%=i%>"><i class="up-picto fa fa-angle-up"></i></a>
+                  <%}%>
+                </div>
                   <%=cityList[i].name%>
                   <div>
                     <%=cityList[i].desc%>
                     <img src="<%=cityList[i].img%>" />
                     <div>
                       <span class="badge badge-warning badge-pill"><%=cityList[i].temp_max%>°c</span>
-                      <span class="badge badge-secondary badge-pill"><%=cityList[i].temp_min%>°c</span>
+                      <span class="badge badge-primary badge-pill"><%=cityList[i].temp_min%>°c</span>
                     </div>
                   </div>
                   <a href="/delete-city?id=<%=cityList[i].id%>"><i class="deletepicto far fa-times-circle"></i></a>
