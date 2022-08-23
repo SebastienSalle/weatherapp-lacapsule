@@ -35,6 +35,10 @@ a {
   justify-content: center;
 }
 
+.logo{
+  height: 20px;
+}
+
 .navItem{
   margin-bottom: 10px;
 }
@@ -69,7 +73,7 @@ a {
 }
 
 .up-picto{
-  color: lightgray;
+  color: gray;
   margin-top: 5px; 
   position: absolute; 
   bottom:25%;
